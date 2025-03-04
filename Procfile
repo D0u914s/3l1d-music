@@ -1,0 +1,1 @@
+web: gunicorn music_stream_project.wsgi:application 

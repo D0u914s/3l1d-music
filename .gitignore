@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 *.so
 .Python
+env/
 build/
 develop-eggs/
 dist/
@@ -28,12 +29,8 @@ db.sqlite3-journal
 media/
 staticfiles/
 
-# Virtual Environment
-venv/
-env/
-ENV/
+# Environment variables
 .env
-.venv
 
 # IDE
 .idea/
