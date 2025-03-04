@@ -1,0 +1,37 @@
+{% extends 'music_stream/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <img src="{{ song.cover_image.url }}" alt="{{ song.title }}" class="img-fluid rounded detail-cover">
+    </div>
+    <div class="col-md-8">
+        <h1 class="display-5">{{ song.title }}</h1>
+        <div class="song-info">
+            <p class="lead">
+                <i class="fas fa-user me-2"></i><strong>Artista:</strong> {{ song.artist }}
+            </p>
+            <p class="lead">
+                <i class="fas fa-compact-disc me-2"></i><strong>Álbum:</strong> {{ song.album }}
+            </p>
+            <p>
+                <i class="fas fa-calendar-alt me-2"></i><strong>Adicionado em:</strong> {{ song.created_at|date:"d/m/Y" }}
+            </p>
+        </div>
+        
+        <div class="mt-4">
+            <h3><i class="fas fa-play-circle me-2"></i>Reproduzir</h3>
+            <audio controls>
+                <source src="{{ song.mp3_file.url }}" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+        </div>
+        
+        <div class="mt-4">
+            <a href="{% url 'song_list' %}" class="btn btn-outline-light">
+                <i class="fas fa-arrow-left me-2"></i>Voltar para a Biblioteca
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %} 
